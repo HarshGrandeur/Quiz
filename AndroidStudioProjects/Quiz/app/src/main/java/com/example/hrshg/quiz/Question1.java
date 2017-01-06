@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Question1 extends AppCompatActivity {
     Button b1,b2,b3;
@@ -62,13 +65,42 @@ public class Question1 extends AppCompatActivity {
 //                    alertDialog.setTitle("Alert!!!");
 //                    alertDialog.setMessage("Well done!!!");
 //                    alertDialog.show();
+                   final  Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
                     MainActivity.answers++;
+
+
 
 
                 }
                 else
                 {
-                   // b1.setBackgroundColor(Color.RED); Toast.makeText(Question1.this, "Wrong", Toast.LENGTH_SHORT).show();
+                   // b1.setBackgroundColor(Color.RED);
+                    Toast.makeText(Question1.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    final Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
+
 //
 //                    AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).create(); //Read Update
 //                    alertDialog.setTitle("Alert!!!");
@@ -118,6 +150,18 @@ public class Question1 extends AppCompatActivity {
                 if(check==hm.get(click))
                 {
                    // b2.setBackgroundColor(Color.GREEN);
+                    final Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
                     Toast.makeText(Question1.this, "Correct", Toast.LENGTH_SHORT).show();
 //                    AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).create(); //Read Update
 //                    alertDialog.setTitle("Alert!!!");
@@ -134,6 +178,19 @@ public class Question1 extends AppCompatActivity {
 //                    alertDialog.setTitle("Alert!!!");
 //                    alertDialog.setMessage("Wrong Answer!!!");
 //                    alertDialog.show();
+                    final Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
 
                 }
 
@@ -176,6 +233,19 @@ public class Question1 extends AppCompatActivity {
 //                    alertDialog.setMessage("Well done!!!");
 //                    alertDialog.show();
                     MainActivity.answers++;
+                    final Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
 
                 }
                 else
@@ -186,6 +256,20 @@ public class Question1 extends AppCompatActivity {
 //                    alertDialog.setMessage("Wrong Answer!!!");
 //                    alertDialog.show();
                     Toast.makeText(Question1.this, "Wrong", Toast.LENGTH_SHORT).show();
+                    final Dialog settingsDialog = new Dialog(Question1.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.image_layout
+                            , null));
+                    settingsDialog.show();
+
+                    final Timer timer2 = new Timer();
+                    timer2.schedule(new TimerTask() {
+                        public void run() {
+                            settingsDialog.dismiss();
+                            timer2.cancel(); //this will cancel the timer of the system
+                        }
+                    }, 2000); // the timer will count 5 seconds....
+
 
                 }
 
