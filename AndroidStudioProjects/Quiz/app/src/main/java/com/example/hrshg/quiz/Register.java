@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class Register extends AppCompatActivity {
@@ -42,24 +43,26 @@ public class Register extends AppCompatActivity {
                 final String e = email.getText().toString();
                 //Toast.makeText(this, "Posting...", Toast.LENGTH_SHORT).show();
                 //final String userId = getUid();
-                //String key = mDatabase.child("Person").push().getKey();
+                String key = mDatabase.child("Person").push().getKey();
 
-                //Map<String, String> postValues = new HashMap<>();
-                //postValues.put("name", n);
-                //postValues.put("age", a)
-                //Map<String, Object> childUpdates = new HashMap<>();
-                //childUpdates.put("/posts/" + key, postValues);
-                //childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
+                Map<String, String> postValues = new HashMap<>();
+                postValues.put("name", n);
+                postValues.put("age", a);
+                postValues.put("email", e);
+                Map<String, Object> childUpdates = new HashMap<>();
+                childUpdates.put("/persons/" + key, postValues);
+               // childUpdates.put("/user-posts/"  + "/" + key, postValues);
+                mDatabase.updateChildren(childUpdates);
 
-                //mDatabase.updateChildren(childUpdates);
-
-                mDatabase.child("Person").child("name").push().setValue(n);
-                mDatabase.child("Person").child("age").push().setValue(a);
-                mDatabase.child("Person").child("email").push().setValue(e);
-                //finishActivity(1);
+//                mDatabase.child("Person").child("name").push().setValue(n);
+//
+//                mDatabase.child("Person").child("age").push().setValue(a);
+//                mDatabase.child("Person").child("email").push().setValue(e);
+//                //finishActivity(img1);
                 Intent i = new Intent(getApplicationContext(),Question1.class);
 
                 startActivity(i);
+                finish();
             }
         });
     }
@@ -68,7 +71,7 @@ public class Register extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        startActivity(new Intent(Register.this, MainActivity.class));
+        //startActivity(new Intent(Register.this, MainActivity.class));
         finish();
 
     }
