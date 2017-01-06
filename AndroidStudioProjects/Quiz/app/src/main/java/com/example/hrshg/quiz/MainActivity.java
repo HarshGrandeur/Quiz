@@ -22,10 +22,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // Intent myIntent = new Intent(MainActivity.this, Question1.class);
-        //myIntent.putExtra("key", value); //Optional parameters
-        //MainActivity.this.startActivity(myIntent);
-
         ImageView iv = (ImageView) findViewById(R.id.bkimg);
         iv.setImageDrawable(getResources().getDrawable(R.drawable.template));
 
